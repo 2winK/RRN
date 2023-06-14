@@ -1,0 +1,197 @@
+/*Кольори*/
+:root {
+    --color1: #222831;
+    --color2: #393E46;
+    --color3: #00ADB5;
+    --color4: #EEEEEE;
+}
+/*Основні*/
+section {
+    padding: 10px 0;
+    width: auto;
+    min-height: 88vh;
+}
+
+footer {
+    background-color: var(--color1);
+}
+
+footer img {
+    width: 33px;
+    height: 33px;
+    margin: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+footer img:hover {
+    margin: 0;
+    transform: scale(1.2);
+}
+
+/*Фоновий кольор хедеру*/
+.rrn_navbar {
+    background: var(--color1);
+}
+
+.rrn_navbar a {
+    transition: transform 0.3s ease-in-out;
+    color: var(--color4);
+}
+
+.rrn_navbar a:hover {
+    text-decoration: none;
+    color: var(--color3);
+    fill: var(--color3);
+}
+
+.rrn_navbar img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.rrn_navbar img:hover {
+    margin: 0;
+    transform: scale(1.2);
+}
+
+/*Форма зв'язку*/
+.contacts_form {
+    background-color: var(--color2);
+    justify-content: center;
+}
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: var(--color1);
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    padding: 20px 20px;
+    box-sizing: border-box;
+}
+
+.form p {
+    align-content: center;
+    justify-content: center;
+    display: block;
+}
+
+.form textarea {
+    width: 100%;
+    height: 200px;
+    background: var(--color4);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.form input {
+    width: 100%;
+    background: var(--color4);
+    border-style: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/*Головна*/
+.news-home {
+    background: var(--color2);
+}
+
+.news-home .carousel-rrn img {
+    width: 100%;
+    height: 100%;
+    max-width: 750px;
+    max-height: 600px;
+}
+
+.news-home .card-rrn {
+    background: var(--color1);
+}
+
+.news-home .card-rrn a {
+    text-decoration: none;
+    color: white;
+}
+
+.news-home .card-rrn a:hover {
+    text-decoration: none;
+    color: var(--color3);
+    fill: var(--color3);
+}
+
+/*Категорії*/
+.categories {
+    background: var(--color2);
+}
+
+.categories img {
+    height: 300px;
+    width: 414px;
+}
+
+.categories .card-cats {
+    background: var(--color1);
+    color: white;
+}
+
+/*Всі новини та новини категорії*/
+.all-news {
+    background: var(--color2);
+}
+
+.all-news a {
+    color: white;
+    text-decoration: none;
+}
+
+.all-news img {
+    width: 416px;
+    height: 330px;
+}
+
+.all-news a:hover {
+    color: var(--color3);
+    text-decoration: none;
+}
+
+/*Детальний огляд*/
+.detail {
+    background: var(--color2);
+}
+
+.detail .card-detail {
+    background: var(--color1);
+}
+
+.detail hr {
+    color: var(--bs-white);
+}
+
+/*Про нас*/
+.about {
+    background: var(--color2);
+}
+
+.about iframe {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.pagination {
+    text-align: center;
+    justify-content: center;
+}
+
+.pagination .page-link {
+    color: var(--color4);
+    background-color: var(--color1);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--color3);
+    border-color: var(--color3);;
+    color: var(--color4);
+}

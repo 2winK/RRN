@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="news-home">
+        <div class="container" >
+            <div class="row my-3">
+                <div class="col-md-7 col-sm-12 mb-sm-3 mb-3 carousel-rrn">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/media/{{ last_news1.image }}" class="d-block img-fluid"
+                                     alt="{{ last_news1.title }}">
+                                <div class="carousel-caption d-block d-md-block">
+                                    <h5>{{ last_news1.title }}</h5>
+                                    <p><a href="/detail/{{ last_news1.id }}" class="btn btn-sm btn-light">Детальніше</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/media/{{ last_news2.image }}" class="d-block img-fluid"
+                                     alt="{{ last_news2.title }}">
+                                <div class="carousel-caption d-block d-md-block">
+                                    <h5>{{ last_news2.title }}</h5>
+                                    <p><a href="/detail/{{ last_news2.id }}" class="btn btn-sm btn-light">Детальніше</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/media/{{ last_news3.image }}" class="d-block img-fluid"
+                                     alt="{{ last_news3.title }}">
+                                <div class="carousel-caption d-block d-md-block">
+                                    <h5>{{ last_news3.title }}</h5>
+                                    <p><a href="/detail/{{ last_news3.id }}" class="btn btn-sm btn-light">Детальніше</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Попередній</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Наступний</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12" style="max-height: 600px; min-height: 600px; overflow: auto;">
+                    {% for news in ten_news %}
+                        <div style="max-height: 150px" class="card-rrn card mb-3">
+                            <div class="card-header text-muted">
+                                <p class="mb-0">{{ news.add_time }} {{ news.category }}</p>
+                            </div>
+                            <div class="card-body">
+                                <a href="/detail/{{ news.id }}"><h5 style="max-height: 100px"
+                                                                    class="card-title">{{ news.title }}</h5></a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+                <div class="row">
+            <div class="col-12 text-white">
+                <div class="btn-group mt-3" style="min-width: 100%; height: 50px;" role="group" aria-label="Basic example">
+                    <a href="/category/1" class="btn btn-secondary mt-2">Війна</a>
+                    <a href="/category/2" class="btn btn-secondary mt-2">Політика</a>
+                    <a href="/category/3" class="btn btn-secondary mt-2">Економіка</a>
+                    <a href="/category/4" class="btn btn-secondary mt-2">Наука</a>
+                    <a href="/category/5" class="btn btn-secondary mt-2">Здоров'я</a>
+                    <a href="/category/6" class="btn btn-secondary mt-2">Події Рівненщини</a>
+                    <a href="/category/7" class="btn btn-secondary mt-2">Спорт</a>
+                    <a href="/category/8" class="btn btn-secondary mt-2">Культура</a>
+                    <a href="/category/9" class="btn btn-secondary mt-2">Технології</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+{% endblock %}

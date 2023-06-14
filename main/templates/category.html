@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Всі категорії{% endblock %}
+{% block content %}
+    <section class="categories">
+    <div class="container">
+    <h3 class="pb-3 my-2 text-white">Всі категорії</h3>
+    <div class="row pt-2 pb-5">
+        {% for cat in cats %}
+            <div class="col-md-4">
+                <div class="card mb-3 shadow card-cats">
+                    <img src="/media/{{ cat.category_image }}" class="card-img-top img-fluid" alt="{{ cat.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title ">{{ cat.title }}</h5>
+                        <hr/>
+                        <p class="card-text"><a href="category/{{ cat.id }}" class="btn btn-sm btn-light">Всі новини</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+</div>
+</section>

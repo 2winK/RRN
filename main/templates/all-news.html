@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Новини{% endblock %}
+{% block content %}
+    <section class="all-news">
+        <div class="container-md mt-3 mb-3">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                {% for news in page_obj %}
+                    <div class="col">
+                        <div class="card" style="background: var(--color1); border: none">
+                            <img src="/media/{{ news.image }}" class="card-img-top img-fluid" alt="{{ news.title }}">
+                            <div class="card-body">
+                                <a href="/detail/{{ news.id }}"><h5
+                                        class="card-title text-center text-wrap">{{ news.title }}</h5></a>
+                                <p class="card-text text-white opacity-50">{{ news.add_time }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <nav aria-label="Page navigation" class="justify-content-center mt-5">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1" aria-label="First">
+                                <span class="sr-only">Перша</span>
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if num == page_obj.number %}
+                            <li class="page-item active">
+                                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                            </li>
+                        {% elif num > page_obj.number|add:-2 and num < page_obj.number|add:2 %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+                                <span class="sr-only">Остання</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Контакти{% endblock %}
+{% block content %}
+    <section class="contacts_form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 mt-5 text-white" style="text-align: justify">
+            <p>Якщо у вас є будь-які запитання щодо статей, новин, реклами, співпраці або інших питань, будь ласка, зв'яжіться з нами за допомогою наступних контактних реквізитів:</p>
+            <p>Електронна пошта: rivnerightnow@gmail.com<br>
+            Телефон: +380958555779<br>
+            Адреса: м.Рівне, вул. Шевченка, 105</p>
+            <p>Ми працюємо щодня, з понеділка по п'ятницю, з 10:00 до 18:00.</p>
+            <p>Наша команда прагне оперативно відповідати на ваші повідомлення та запити, і ми робимо все можливе, щоб забезпечити вам відповіді та допомогу у найкоротший термін.</p>
+            <p>Дякуємо вам за відвідування нашого регіонального порталу новин. Ми цінуємо вашу підтримку та зацікавленість. Не соромтеся звертатися до нас з будь-якими питаннями або зауваженнями, і ми з радістю вам допоможемо.
+            </p>
+            </div>
+            <div class="col-md-12 col-lg-6 mt-2">
+            <h3 class="text-white text-center">Наша адреса</h3>
+                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2531.050753275317!2d26.24463997634498!3d50.62617397162623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472f135296fd3cc5%3A0xf23b16c3e5212044!2zwqtWSVZBIFNPRlTCuw!5e0!3m2!1sru!2sua!4v1682446038103!5m2!1sru!2sua"  width="636" height="370" style="border:0;" allowfullscreen=""  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-md-12 col-lg-6 mt-2">
+                    <h2 class="text-white text-center pb-2" style="margin: 0">Напишіть нам!</h2>
+                    <form class="form" method="post" action="{% url 'contacts' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_name" class="text-white">Ім'я:</label>
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_email" class="text-white">Email:</label>
+                            {{ form.email_address }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_message" class="text-white">Повідомлення:</label>
+                            {{ form.message }}
+                        </div>
+                        <button class="btn btn-primary mt-1" type="submit">Надіслати</button>
+                    </form>
+                </div>
+                <div class="col-md-12 col-lg-6 mt-2 text-white " style="text-align: justify">
+                    <h4>Порада #1</h4>
+                    <p>Заповніть всі обов'язкові поля: Переконайтеся, що заповнили всі необхідні поля в формі зворотного
+                        зв'язку. Всі поля повинні бути заповнені.</p>
+                    <h4>Порада #2</h4>
+                    <p>Перевірте правильність введених даних: Перед відправкою повідомлення, переконайтеся, що ви
+                        правильно ввели свою інформацію. Перевірте правильність написання електронної пошти, номеру
+                        телефону або інших даних, які ви вводите у форму.</p>
+                    <h4>Порада #3</h4>
+                    <p>Запишіть чітке та конкретне повідомлення: Сформулюйте своє повідомлення чітко та зрозуміло.
+                        Уникайте непотрібних деталей або запитань. Вкажіть суть вашого повідомлення або запиту, щоб
+                        отримати швидку та точну відповідь.</p>
+                    <h4>Порада #4</h4>
+                    <p>Перевірте перед відправкою: Перед натисканням кнопки "Відправити", перегляньте своє повідомлення
+                        ще раз, щоб переконатися, що ви не пропустили нічого важливого.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

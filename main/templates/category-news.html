@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Категорія - {{ category.title }}{% endblock %}
+{% block content %}
+    <section class="all-news">
+        <div class="container-md mt-3 mb-3">
+            <h3 class="pb-1 my-4 text-white">{{ category.title }}</h3>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                {% for news in all_news %}
+                    <div class="col">
+                        <div class="card" style="background: var(--color1); border: none">
+                            <img src="/media/{{ news.image }}" class="card-img-top img-fluid" alt="{{ news.title }}">
+                            <div class="card-body">
+                                <a href="/detail/{{ news.id }}"><h5
+                                        class="card-title text-center text-wrap">{{ news.title }}</h5></a>
+                                <p class="card-text text-white opacity-50">{{ news.add_time }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
